@@ -64,10 +64,12 @@ SELECT INSTR('MySQL', 'SQL'); >> 3
 # INSTR('문자열', '찾는 문자') ; 문자열에서 찾는 문자의 인덱스, 없으면 0
 # 대소문자 구분 X
 
+SELECT LOCATE('ab', 'aiekdmabcd', (pos)); >> 7
+# LOCATE('찾는 문자', '문자열', (시작 자리수)) ; 시작 자리수부터 검색을 시작하여 문자열에서 찾는 문자의 인덱스
+
 SELECT REPLACE(Continent, 'a', '*') FROM Country
 # REPLACE('문자열', '찾는 문자', '치환할 문자') ; 찾는 문자가 있으면 치환
 # 대소문자 구분 O
-
 ```
 
 
@@ -143,6 +145,7 @@ SELECT COALESCE(dept1, dept2, dept3) FROM salary;
 - 조건 절을 만족하는 모든 행을 다 찾고나서 모든 레코드를 한번에 연산
 - 수행 순서 
   - FROM > WHERE > GROUP BY > HAVING > ORDER BY > SELECT > LIMIT
+- HAVING 절은 반드시 GROUP BY 절 다음에 사용
 
 ```mysql
 # SUM, AVG, MAX, MIN, STDDEV, VARIANCE
@@ -162,6 +165,12 @@ SUM(Budget_value) AS '예산합계'
 FROM Budget 
 GROUP BY IF(Do IN ('서울특별시','경기도'), '수도권','지방') AS '지역구분';
 # 열에 조건절을 사용하는 경우 SELECT 절과 GROUP BY 절에 같은 형태로 작성해야함
+
+# EX.
+SELECT CountryCode, Name, SUM(Population)
+FROM city
+GROUP BY CountryCode, Name WITH ROLLUP
+# ROLLUP ; 총합 또는 중간합계가 필요한 경우 
 ```
 
 
@@ -189,7 +198,7 @@ JOIN gift g ON c.point BETWEEN g.point_s AND g.point_e;
 ```mysql
 # [컬럼명] LIKE '특정문자열%' ; 특정문자열로 시작하는
 # [컬럼명] LIKE '%특정문자열%' ; 특정문자열을 포함하는
-# [컬럼명] LIKE '특정문자열?' ; 특정문자열 + 한글자
+# [컬럼명] LIKE '특정문자열_' ; 특정문자열 + 한글자
 ```
 
 - 사용자 정의 변수

@@ -78,3 +78,30 @@ WHERE p1.Email = p2.Email AND p1.Id > p2.Id
 ```
 
 
+
+## 2. DML, DDL, DCL
+
+### 2.1 DML(Data Manipulation Language)
+
+- 데이터 조작 언어, 데이터를 조회하거나 검색하기 위한 명령어
+- DML을 사용하기 전에 반드시 테이블이 정의되어 있어야함
+- SELECT, INSERT, UPDATE, DELETE
+- 트랜잭션(transaction)이 발생 가능
+
+
+
+### 2.2 DDL(Data Definition Language)
+
+- 데이터 정의 언어, 데이터 구조와 관련된 명령어
+- CREATE, DROP, ALTER
+- DDL은 트랜잭션 발생 X
+- ROLLBACK, COMMIT 사용 불가
+- 실행 즉시 적용
+
+
+
+### 2.3 DCL(Data Control Language)
+
+- 데이터 제어 언어, 권한을 주고 회수하는 명령어
+- GRANT, REVOKE
+
