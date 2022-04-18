@@ -11,21 +11,19 @@
 ### 1. 정렬 알고리즘
 
 - n개의 숫자가 입력으로 주어졌을 때, 이를 기준에 맞추어 정렬하여 출력하는 알고리즘
-
 - 버블 정렬, 선택 정렬, 삽입 정렬, 병합 정렬, 퀵 정렬, 힙 정렬 등 다양한 정렬 종류가 있음
-
 - Stable sort(안정 정렬) : 중복된 키의 순서를 바꾸지 않고 순서대로 정렬 알고리즘
 
   - stable : Bubble sort, Insertion sort, Merge sort, Counting sort
   - unstable : Selection sort, Quick sort, Heap sort
-
 - In-place sort(제자리 정렬) : 추가적인 메모리 공간을 많이 혹은 전혀 필요로 하지 않는 정렬 알고리즘
 
   - in-place : Bubble sort, Selection, Insertion sort, Quick sort(?), Heap sort
   - not in-place : Merge sort, Counting sort
 
-<p align="center"><img src=".\IMAGE\sorting.png" alt="adj" style="zoom:70%;" /></p>
-<p align="center"><img src=".\IMAGE\sorting_2.gif" alt="adj" style="zoom:70%;" /></p>
+![](https://miro.medium.com/max/1400/1*bKZUD0XAHlIVXoZ171Jxwg.jpeg)
+
+![sorting](https://miro.medium.com/max/1400/1*6UxDYdMlnevixdo76xL8vA.gif)
 
 <br>
 
