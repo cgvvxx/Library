@@ -6,7 +6,7 @@
 
 백트래킹의 대표 예제로 N-Queen 문제가 있다. N-Queen 문제란 NxN 크기의 체스판 위에서 N개의 퀸이 서로 공격할 수 없게 놓는 방법의 수를 구하는 문제이다. 다음 그림은 N=8인 경우, 8-Queen 문제를 해결할 때의 백트래킹 과정을 설명해준다. 
 
-![N-Queen](https://kyun2da.github.io/img/algorithm/nQueen.gif)
+<p align="center"><img src="https://kyun2da.github.io/img/algorithm/nQueen.gif"></p>
 
 <br>
 
