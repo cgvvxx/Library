@@ -1,4 +1,4 @@
-# CSS
+# CSS 기본
 
 
 
@@ -10,7 +10,7 @@
   - 선택자(Selector)를 이용하여 스타일을 지정할 HTML 요소 선택
   - 속성과 값의 쌍의 statement를 통해 스타일 지정
 
-  ![](./IMAGE/web_selector.png)
+<p align="center"><img src="./IMAGE/web_selector.png"></p>
 
 - 정의 방법
 
@@ -149,7 +149,7 @@
 
 ## 4. Box Model, Float
 
-![](./IMAGE/css_boxmodel.png)
+<p align="center"><img src="./IMAGE/css_boxmodel.png"></p>
 
 - 구성 요소
   - 내용(content) : 박스의 실질적인 내용 부분, 텍스트나 이미지
