@@ -140,7 +140,7 @@
 
 ## 3. Float
 
-![](./IMAGE/css_float.png)
+<p align="center"><img src="./IMAGE/css_float.png"></p>
 
 - float
 
