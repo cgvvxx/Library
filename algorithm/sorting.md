@@ -21,9 +21,12 @@
   - in-place : Bubble sort, Selection, Insertion sort, Quick sort(?), Heap sort
   - not in-place : Merge sort, Counting sort
 
-![](https://miro.medium.com/max/1400/1*bKZUD0XAHlIVXoZ171Jxwg.jpeg)
-
-![sorting](https://miro.medium.com/max/1400/1*6UxDYdMlnevixdo76xL8vA.gif)
+<p align="center">
+	<img src="https://miro.medium.com/max/1400/1*bKZUD0XAHlIVXoZ171Jxwg.jpeg">
+</p>
+<p align="center">
+	<img src="https://miro.medium.com/max/1400/1*6UxDYdMlnevixdo76xL8vA.gif">
+</p>
 
 <br>
 
