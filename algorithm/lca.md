@@ -4,7 +4,9 @@ LCA 알고리즘은 트리에서 주어진 두 노드 u, v에서 (자기 자신�
 
 **트리에서 두 노드 사이의 최단 경로**를 찾을 때 활용 가능하다. 예를 들어, LCA(u, v) = w라면 최단 경로는 u-w-v 형태로 주어짐을 알 수 있다.
 
-![img](https://algo-logic.info/wp-content/uploads/2020/03/tree-2.png)
+<p align="center">
+	<img src="https://algo-logic.info/wp-content/uploads/2020/03/tree-2.png" width="500" height="400">
+</p>
 
 <br>
 
