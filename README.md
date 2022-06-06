@@ -97,7 +97,14 @@
 
 #### Django
 
-- TBD
+- Overview of Django
+- Components
+  - Authentication
+  - Model
+  - Requests
+  - Static Files
+  - Form
+- How to start Django
 
 #### Docker
 
