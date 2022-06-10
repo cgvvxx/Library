@@ -73,7 +73,7 @@
 - binary search
 - bruteforcing
 - disjoint set
-- divide and conquer
+- [divide and conquer](algorithm/divide-and-conquer.md)
 - dp
 - greedy
 - [lca](algorithm/lca.md)
@@ -87,8 +87,7 @@
 
 #### Network
 
-- cookie and session
-
+- [cookie and session](network/cookie-and-session.md)
 - [connection timeout vs. connection request timeout vs. socket timeout](network/connection-timeout-vs-connection-request-timeout-vs-socket-timeout.md)
 
 #### Database
@@ -97,14 +96,14 @@
 
 #### Django
 
-- Overview of Django
+- [Overview of Django](django/overview-of-django.md)
 - Components
-  - Authentication
-  - Model
-  - Requests
-  - Static Files
-  - Form
-- How to start Django
+  - [Authentication](django/components-authentication.md)
+  - [Model](django/components-model.md)
+  - [Requests](django/components-requests.md)
+  - [Static Files](django/components-static-files.md)
+  - [Form](django/components-form.md)
+- [How to start Django](django/how-to-start-django.md)
 
 #### Docker
 
