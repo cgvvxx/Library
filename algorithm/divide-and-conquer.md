@@ -5,7 +5,7 @@
 아래 그림이 대표적인 분할 정복 알고리즘을 적용하여 문제를 해결하는 방법이다. 주어진 문제를 비슷한 크기의 두 개의 부분 문제로 분할하고, 또 그 부분 문제를 비슷한 크기의 두 개의 부분 문제로 분할하는 과정을 진행한다. 이 때 해당 부분 문제가 충분히 간단한 경우(일반적으로 전체 경우의 수가 한 가지 또는 두 가지가 되는 경우) 해당 부분 문제를 해결한다. 각 부분 문제의 해를 return 하여 그 상위 문제의 해를 하위 부분 문제들의 조합으로 구한다. 이러한 과정을 원래의 문제의 해를 구할 때까지 반복하여 해결한다.
 
 <p align="center">
-	<img src="https://w.namu.la/s/739414961f779b823a01f6ee005d0b88b4c360bc903b2a6c1d8cc066766f939d322d860e204f587cff859e02a70941b07ba50f66ed5c39efba6d3071db2aa6f14e978e6f13e1efc9cedfb45b5c05aa38a160bba01d2a7fb5004a961ec0191f4a3b6dd5cb73dffac2737bf0b0c8f4607e">
+	<img src="https://technologystrive.com/wp-content/uploads/2021/12/Divide_And_Conquer_Alogorithm-1024x763.png">
 </p>
 
 
@@ -50,7 +50,7 @@ $$T(n) = aT(n/b) + f(n)$$
 이 때, $a >= 1,  b>1$이고, $f(n)$은 점근적으로 양수 함수값을 가지는 함수이다. 이러한 형식의 알고리즘은 마스터 정리에 의하여 다음과 같은 시간복잡도를 가진다.
 
 1. $f(n) = O(n^c), c < log_b a$이면, $T(n) = {\Theta}(n^{{log_b}a})$
-2. $f(n) = {\Theta}(n^c), c = log_b a$이면, $T(n) = {\Theta}(n^c log n))$
+2. $f(n) = {\Theta}(n^c), c = log_b a$이면, $T(n) = {\Theta}(n^c log n)$
 3. $f(n) = {\Omega}(n^c), c > log_b a$이면, $T(n) = {\Theta}(f(n))$
 
 예를 들어서, n개의 원소를 정렬하는 병합 정렬의 경우를 살펴보자. 각각의 크기가 절반인 두 개의 하위 문제로 나누어 풀고난 후, 다시 두 개의 하위 문제로 나온 n개의 원소들을 정렬해야 하므로 $T(n)=2T(n/2)+O(n)$을 만족한다. 따라서 위의 정리에 의하여 병합 정렬의 시간복잡도는 O(nlogn)이 된다.
