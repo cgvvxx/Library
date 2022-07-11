@@ -71,17 +71,18 @@
 - [backtracking](algorithm/backtracking.md)
 - [bfs and dfs](algorithm/dfs-and-bfs.md)
 - binary search
-- bruteforcing
+- [bruteforcing](algorithm/bruteforcing.md)
 - disjoint set
 - [divide and conquer](algorithm/divide-and-conquer.md)
-- dp
-- greedy
+- [dp](algorithm/dp.md)
+- [greedy](algorithm/greedy.md)
 - [lca](algorithm/lca.md)
 - prefix sum
 - primality test
 - shortest path
 - [sorting](algorithm/sorting.md)
 - two pointer
+- [pythonic codes for solving algorithms](algorithm/pythonic-codes-for-solving-algorithms.md)
 
 #### Operating System
 
@@ -126,6 +127,11 @@
 ### Database technologies
 
 #### MySQL
+
+- [Commonly Used SQL commands](mysql/commonly-used-sql-commands.md)
+- [CRUD](mysql/crud.md)
+- [Subquery](mysql/subquery.md)
+- [Referring to a column alias in a where clause](mysql/referring-to-a-column-alias-in-a-where-clause.md)
 
 #### MongoDB
 
