@@ -44,12 +44,12 @@ print(list(zip(*my_list[::-1])))
 ```
 
 ```python
-# 1. *(asterisk) ; unpacking
+# 1. *(asterisk) : unpacking
 _list = [1, 2, 3, 4, 5]
 print(*_list)
 >> 1 2 3 4 5
 
-# 2. *(asterisk) ; 가변인자
+# 2. *(asterisk) : 가변인자
 N, *arr = map(int, input().split())
 ```
 
@@ -93,7 +93,7 @@ print(_string_dict)
 
 #### 3.1.3. deque
 
-- Stack&Queue 자료구조 참고
+- [Stack&Queue](../data-structure/stack-and-queue.md) 참고
 
 ### 3.2. itertools
 
@@ -124,11 +124,11 @@ math.floor(r) # [r]
 
 ### 3.4. heapq
 
-- Stack&Queue 참고
+- [Stack&Queue](../data-structure/stack-and-queue.md) 참고
 
 ### 3.5. bisect
 
-- Binary Search 참고
+- [Binary Search](./binary-search.md) 참고
 
 <br>
 
@@ -142,16 +142,17 @@ input = sys.stdin.readline
 ```
 
 - input 보다 더 빠르게 입력을 받을 수 있음 ([참고](https://www.acmicpc.net/blog/view/56))
+
 - sys.stdin.readline의 경우 개행문자(\n) 포함하여 입력으로 받음
 - 개행문자(\n)이 있어도 형변환이나 split() 가능
 
 ### 4.2 ETC
 
 - 아스키코드 ; ord('char'), chr(num)
-- 10진수 > 2, 8, 16진수 ; bin(n), oct(n), hex(n)
-- n진수 > 10진수 ; int('n', base)
-- dictionary 객체 접근 시 get 사용 ; 해당 key가 존재하지 않으면 None을 리턴
 
+- 10진수 > 2, 8, 16진수 : bin(n), oct(n), hex(n)
+- n진수 > 10진수 : int('n', base)
+- dictionary 객체 접근 시 get 사용 : 해당 key가 존재하지 않으면 None을 리턴
 - 객체의 메모리 사이즈 (Byte 단위)
 
   ```python
@@ -162,9 +163,7 @@ input = sys.stdin.readline
   >> 8 KB
   ```
 
-- 재귀 함수 호출 에러
-
-  - RuntimeError: maximum recursion depth exceeded 발생하는 경우
+- 재귀 함수 호출 에러 - RuntimeError: maximum recursion depth exceeded 발생하는 경우
 
   ```python
   # default 재귀 함수 호출 횟수 : 1000
