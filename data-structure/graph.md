@@ -22,13 +22,15 @@ h) 간선에 가중치가 있는 가중 그래프(Weighted Graph)
 
 일반적으로 자기 자신으로 돌아오는 간선(loop)과 중복된 간선(multiple edges)은 없는 단순 그래프를 생각한다.
 
-<p align="center"><img src="https://www.researchgate.net/profile/Pawel-Boguslawski/publication/265219734/figure/fig4/AS:652964947562502@1532690383548/Graphs-a-simple-graph-b-multigraph-c-pseudograph-d-labelled-graph-edges-e.png"></p>
+<p align="center"><img src="graphs.png"></p>
+
 
 <br>
 
 ## 그래프의 구성 요소
 
 - 정점(Vertex) 또는 노드(Node) : 데이터의 객체
+
   - 인접 정점(Adjacent Vertex) : 하나의 정점에서 간선에 의해 직접 연결되어 있는 정점
 - 간선(Edge) : 노드를 연결하는 선
   - 가중치 간선(Weighted Edge) : 정점과 정점까지의 거리 또는 도달하는데 필요한 비용(cost) 등으로 가중치가 부여된 간선
@@ -38,6 +40,7 @@ h) 간선에 가중치가 있는 가중 그래프(Weighted Graph)
 - 경로(path) : 하나의 정점에서 또 다른 정점까지 이어지는 간선을 통해 이어지는 길을 의미하며, 정점의 나열로 표현
   - 단순 경로(Simple Path) : 반복되는 정점이 없는 경로
   - 사이클(Cycle) : 출발 정점과 도착 정점이 동일한 단순 경로
+
     - 순환 그래프(Cyclic Graph) : 그래프 내에 사이클이 존재하는 그래프
     - 비순환 그래프(Acyclic Graph) : 그래프 내에 사이클이 존재하지 않는 그래프
 - 탐색(traverse) : 하나의 정점에서 시작하여 그래프의 모든 정점을 한 번씩만 방문하는 것
@@ -97,10 +100,10 @@ h) 간선에 가중치가 있는 가중 그래프(Weighted Graph)
 
 그래프를 활용한 알고리즘은 다음 문서를 참조한다.
 
-- [그래프의 탐색(Graph Traverse)]()
+- [그래프의 탐색(Graph Traverse)](../algorithm/dfs-and-bfs.md)
 
-- [최단 경로(Shortest Path)]()
+- [최단 경로(Shortest Path)](../algorithm/shortest-path.md)
 
-- [최소 신장 트리(Minimum Spanning)]() 
+- [최소 신장 트리(Minimum Spanning Tree)](../algorithm/mininum-spanning-tree.md) 
 
   
