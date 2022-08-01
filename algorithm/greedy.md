@@ -101,30 +101,25 @@ print(ans)
 
 ## 참고문제
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1026">[boj] 1026 - 보물</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;재배열 부등식 참조 (작은 것은 작은 것끼리, 큰 것은 큰 것끼리 붙여놓을 때 최댓값을, 그 반대일 때 최솟값을 갖는다.) 
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1026">[boj] 1026 - 보물</a></font></u></summary>
+
+\- 재배열 부등식 참조 (작은 것은 작은 것끼리, 큰 것은 큰 것끼리 붙여놓을 때 최댓값을, 그 반대일 때 최솟값을 갖는다.) </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_1026.py">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1715">[boj] 1715 - 카드 정렬하기</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;우선순위 큐(heap)을 활용하여 각 카드를 우선 순위 큐에 삽입하고 가장 작은 카드부터 2장씩 꺼내서 (pop) 합친 후 우선 순위 큐에 삽입하는 과정을 반복.<br>&nbsp;&nbsp;※ N=1인 경우, 0을 출력해야 함!
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1715">[boj] 1715 - 카드 정렬하기</a></font></u></summary>
+
+\- 우선순위 큐(heap)을 활용하여 각 카드를 우선 순위 큐에 삽입하고 가장 작은 카드부터 2장씩 꺼냄(pop) </br>
+\- 꺼낸 카드를 합친 후 우선순위 큐에 삽입하는 과정을 반복 </br>
+\- ※ N=1인 경우, 0을 출력해야 함! </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_1715.py">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1700">[boj] 1700 - 멀티탭 스케줄링</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;그리디하게 현재 사용중인 전기용품 중 가장 마지막에 사용하는 전기용품을 플러그에서 제거하는 방식으로 진행
-    </div> 
-</details>
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1700">[boj] 1700 - 멀티탭 스케줄링</a></font></u></summary>
 
+\- 그리디하게 현재 사용중인 전기용품 중 가장 마지막에 사용하는 전기용품을 플러그에서 제거하는 방식으로 진행</br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_1700.py">[Python]</a>
+</details>
