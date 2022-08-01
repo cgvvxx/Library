@@ -198,29 +198,25 @@ print(dq(0, n))
 
 ### 참고 문제
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1992">[boj] 1992 - 쿼드트리</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;주어진 영상을 4개로 쪼개 각각의 영상이 하나의 문자로 이루어진 경우, 바로 그 문자값을 리턴하고, 4개로 쪼개지는 경우는 앞 뒤로 "("와 ")"을 붙여서 리턴
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1992">[boj] 1992 - 쿼드트리</a></font></u></summary>
+
+\- 주어진 영상을 4개로 쪼개 각각의 영상이 하나의 문자로 이루어진 경우, 바로 그 문자값을 리턴 </br>
+\- 4개로 쪼개지는 경우는 앞 뒤로 "("와 ")"을 붙여서 리턴</br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_1992.py">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/2447">[boj] 2447 - 별 찍기 10</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;먼저 주어진 길이만큼의 리스트를 만들고, 재귀적으로 3등분한 내부 구역에 대하여 별 찍기
-    </div> 
-</details>
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/2104">[boj] 2104 - 부분배열 고르기</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;히스토그램 내의 최대 직사각형의 크기를 구하는 문제와 비슷한 방식의 분할 정복 알고리즘을 활용. 이 때, 가운데를 포함한 수열에 대해서 가로의 길이가 수열의 합, 세로의 길이가 각 수열의 값들의 최솟값으로 진행
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/2447">[boj] 2447 - 별 찍기 10</a></font></u></summary>
+
+\- 먼저 주어진 길이만큼의 리스트를 만들고, 재귀적으로 3등분한 내부 구역에 대하여 별 찍기 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/etc/177_B_2447.py">[Python]</a>
 </details>
 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/2104">[boj] 2104 - 부분배열 고르기</a></font></u></summary>
+
+\- 히스토그램 내의 최대 직사각형의 크기를 구하는 문제와 비슷한 방식의 분할 정복 알고리즘을 활용 </br>
+\- 이 때, 가운데를 포함한 수열에 대해서 가로의 길이가 수열의 합, 세로의 길이가 각 수열의 값들의 최솟값으로 진행 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_2104.py">[Python]</a>
+</details>
