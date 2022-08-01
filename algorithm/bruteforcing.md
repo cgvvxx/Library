@@ -171,47 +171,39 @@ print(ans)
 
 ### 참고 문제
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/10819">[boj] 10819 - 차이를 최대로</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;최대 경우의 수는 8!, 약 40000가지 이므로 permutations을 이용하여 완전탐색
-    </div> 
-</details>
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/10819">[boj] 10819 - 차이를 최대로</a></font></u></summary>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/15686">[boj] 15686 - 치킨 배달</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;치킨 집의 개수 M <= 13이므로 combinations을 통해 완전탐색을 하는 경우 최대 약 2000가지(13C6)의 경우를 살펴보면 충분함
-    </div> 
-</details>
+\- 최대 경우의 수는 8!, 약 40000가지 이므로 permutations을 이용하여 완전탐색 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_10819.py">[Python]</a>
+</details>   
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/14500">[boj] 14500 - 테트로미노</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dfs와 backtracking을 통하여 4개의 깊이까지 탐색한 후 최댓값을 업데이트. 이 때, ㅗ모양은 dfs를 통해 체크할 수 없으므로 해당 모양의 테트로미노는 직접 체크해주어야
-    </div> 
-</details>
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/15686">[boj] 15686 - 치킨 배달</a></font></u></summary>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/17142">[boj] 17142 - 연구소 3</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp; bfs + 완전탐색, M개의 바이러스를 선택하는 모든 조합에 대하여 바이러스가 한 칸씩 퍼지는 bfs를 통해 최대 시간을 계산하여야 함
-    </div> 
-</details>
+\- 치킨 집의 개수 M <= 13이므로 combinations을 통해 완전탐색을 하는 경우 최대 약 2000가지(13C6)의 경우를 살펴보면 충분함 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89/097_B_15686.py">[Python]</a>
+</details>   
 
-<details> 
-    <summary>
-        <a href="https://programmers.co.kr/learn/courses/30/lessons/60059">[programmers] 자물쇠와 열쇠</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp; key가 회전하는 경우 4가지 * lock에 key를 대입하는 경우 (N+2M-1)^2가지, 최대 약 15000가지이므로 완전탐색으로 해결
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/14500">[boj] 14500 - 테트로미노</a></font></u></summary>
+
+\- dfs와 backtracking을 통하여 4개의 깊이까지 탐색한 후 최댓값을 업데이트 </br>
+\- 이 때, ㅗ모양은 dfs를 통해 체크할 수 없으므로 해당 모양의 테트로미노는 직접 체크해주어야함 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_14500.py">[Python]</a>
+</details>   
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/17142">[boj] 17142 - 연구소 3</a></font></u></summary>
+
+\- bfs + 완전탐색 </br>
+\- M개의 바이러스를 선택하는 모든 조합에 대하여 바이러스가 한 칸씩 퍼지는 bfs를 통해 최대 시간을 계산 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_17142.py">[Python]</a>
+</details>   
+
+<details>
+<summary><u><font size="+1"><a href="https://programmers.co.kr/learn/courses/30/lessons/60059">[programmers] 자물쇠와 열쇠</a></font></u></summary>
+
+\- key가 회전하는 경우 4가지 * lock에 key를 대입하는 경우 (N+2M-1)^2가지, 최대 약 15000가지이므로 완전탐색으로 해결 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/programmers/programmers_60059.py">[Python]</a>
 </details>
