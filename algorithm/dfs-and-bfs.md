@@ -108,100 +108,266 @@ bfs(graph, 1, visited)
 
 ## 예제
 
-### 1. DFS & BFS
+### 1. [단지번호붙이기](https://www.acmicpc.net/problem/2667)
+
+2차원 격자모양의 그래프에서 서로 다른 1의 개수(전체 단지의 수)와 서로 다른 1을 이루고 있는 숫자의 개수(각 단지에 속하는 집의 수)를 구하는 문제이다. dfs & bfs의 가장 기본적인 형태의 문제이고 문제 자체의 케이스가 크지 않아서 재귀함수를 이용한 dfs, 스택을 이용한 dfs, 큐를 이용한 bfs 어떤 형태로 풀어도 큰 차이가 나지 않는다.
 
 ```python
-# 1. DFS 기본 예제 - 음료수 얼려 먹기
-# 4 5
-# 00110
-# 00011
-# 11111
-# 00000
-# >> 3
+# 1. 재귀함수를 이용한 DFS
 
 def dfs(x, y):
-
-    if x < 0 or x >= n or y < 0 or y >= m:
-        return False
     
-    if graph[x][y] == 0:
+    global area
+    
+    if x < 0 or y < 0 or x >= n or y >= n:
+        return
+    
+    if visited[x][y]:
+        return
+    
+    if graph[x][y]:
         
-        graph[x][y] = 1
+        area += 1
+        visited[x][y] = True
         
         dfs(x-1, y)
         dfs(x, y-1)
         dfs(x+1, y)
         dfs(x, y+1)
-        
-        return True
-    
-    return False
 
 
-n, m = map(int, input().split())
-graph = [list(map(int, input())) for _ in range(n)]
-    
-answer = 0
+n = int(input())
+graph = [list(map(int, list(input()))) for _ in range(n)]
+
+visited = [[False] * n for _ in range(n)]
+areas = []
+
 for i in range(n):
-    for j in range(m):
-        if dfs(i, j):
-            answer += 1
+    for j in range(n):
+        if graph[i][j] and not visited[i][j]:
+            area = 0
+            dfs(i, j)
+            areas.append(area)
 
-print(answer)
+areas.sort()
+print(len(areas))
+for a in areas:
+    print(a)
+```
+
+```python
+# 2. 스택을 이용한 DFS
+
+def dfs(x, y):
+    
+    stack = []
+    stack.append((x, y))
+    area = 1
+    
+    while stack:
+        
+        x, y = stack.pop()
+    
+        for i in range(4):
+
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or ny < 0 or nx >= n or ny >= n:
+                continue
+
+            if visited[nx][ny]:
+                continue
+                
+            if graph[nx][ny]:
+                visited[nx][ny] = True
+                stack.append((nx, ny))
+                area += 1
+                
+    return area
 
 
-# 2. BFS 기본 예제 - 미로 탈출
-# 5 6
-# 101010
-# 111111
-# 000001
-# 111111
-# 111111
-# >> 10
+n = int(input())
+graph = [list(map(int, list(input()))) for _ in range(n)]
+
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+visited = [[False] * n for _ in range(n)]
+areas = []
+
+for i in range(n):
+    for j in range(n):
+        if graph[i][j] and not visited[i][j]:
+            visited[i][j] = True
+            areas.append(dfs(i, j))
+
+areas.sort()
+print(len(areas))
+for a in areas:
+    print(a)
+```
+
+```python
+# 3. 큐를 이용한 BFS
 
 from collections import deque
 
 def bfs(x, y):
-
+    
     queue = deque()
     queue.append((x, y))
+    area = 1
     
     while queue:
         
         x, y = queue.popleft()
+    
+        for i in range(4):
+
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or ny < 0 or nx >= n or ny >= n:
+                continue
+
+            if visited[nx][ny]:
+                continue
+                
+            if graph[nx][ny]:
+                visited[nx][ny] = True
+                queue.append((nx, ny))
+                area += 1
+    
+    return area
+
+
+n = int(input())
+graph = [list(map(int, list(input()))) for _ in range(n)]
+
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
+visited = [[False] * n for _ in range(n)]
+areas = []
+
+for i in range(n):
+    for j in range(n):
+        if graph[i][j] and not visited[i][j]:
+            visited[i][j] = True
+            areas.append(bfs(i, j))
+
+areas.sort()
+print(len(areas))
+for a in areas:
+    print(a)
+```
+
+### 2. [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)
+
+기본적인 2차원 평면으로 주어진 그래프를 이용한 미로 탐색에 벽을 하나 부실 수 있다는 조건이 추가 되었다. 
+
+기본적인 미로 탐색과 같이 bfs를 이용하고, 추가적으로 벽을 부술 수 있는 조건을 기록하기 위하여 visited를 3차원 배열로 만들어, 2차원 평면으로 주어진 그래프에서 벽을 뚫지 않고 해당 지점까지의 최단 경로 횟수와 벽을 뚫고 해당 지점까지의 최단 경로 횟수를 각각 저장하여 해결할 수 있다.
+
+추가로 다음과 같은 시리즈의 문제들도 참고하면 좋다.
+
+- [14442번: 벽 부수고 이동하기 2](https://www.acmicpc.net/problem/14442) : 벽을 최대 k개까지 부실 수 있음
+- [16933번: 벽 부수고 이동하기 3](https://www.acmicpc.net/problem/16933) : 벽을 최대 k개까지 부실 수 있음 + 낮밤이 존재하여 낮에만 벽을 부실 수 있음
+- [16946번: 벽 부수고 이동하기 4](https://www.acmicpc.net/problem/16946) : 각각의 벽의 위치에서 벽을 부수고 이동할 수 있는 최대 개수를 카운트
+
+```python
+# boj 2206 - 벽 부수고 이동하기
+
+from collections import deque
+
+def bfs():
+    
+    queue = deque()
+    queue.append((0, 0, 0))
+    visited[0][0][0] = 1
+    
+    while queue:
+        
+        x, y, z = queue.popleft()
+        
+        if (x, y) == (n-1, m-1):
+            return visited[x][y][z]
         
         for i in range(4):
             
             nx = x + dx[i]
             ny = y + dy[i]
             
-            if nx < 0 or nx >= n or ny < 0 or ny >= m:
-                continue
-            
-            if graph[nx][ny] == 0:
+            if nx < 0 or ny < 0 or nx >= n or ny >= m:
                 continue
                 
-            if graph[nx][ny] == 1:
-                graph[nx][ny] = graph[x][y] + 1
-                queue.append((nx, ny))
+            if visited[nx][ny][z] == 0:
                 
-    return graph[n-1][m-1]
+                if graphs[nx][ny] == 0:
+                    queue.append((nx, ny, z))
+                    visited[nx][ny][z] = visited[x][y][z] + 1
+                    
+                if z == 0 and graphs[nx][ny] == 1:
+                    queue.append((nx, ny, 1))
+                    visited[nx][ny][1] = visited[x][y][z] + 1
+                    
+    return -1
 
 
 n, m = map(int, input().split())
-graph = [list(map(int, input())) for _ in range(n)]
+graphs = [list(map(int, list(input()))) for _ in range(n)]
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1]
-
-print(bfs(0, 0))
+visited = [[[0] * 2 for _ in range(m)] for _ in range(n)]
+dx = [1, 0, -1, 0]
+dy = [0, -1, 0, 1]
 ```
 
-**Reference**
 
-- [(이코테 2021 강의 몰아보기) 3. DFS & BFS - YouTube](https://www.youtube.com/watch?v=7C9RgOcvkvo)
 
 ## 참고 문제
 
-- [[boj] 1012 - 유기농 배추](https://www.acmicpc.net/problem/1012)
-- [[boj] 2178 - 미로 탐색](https://www.acmicpc.net/problem/2178)
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/2178">[boj] 2178 - 미로 탐색</a></font></u></summary>
+\- 가장 기본적인 bfs 문제 미로 탐색 </br>
+\- bfs를 통해 주변을 탐색해나가면서 2차원 평면으로 주어진 그래프를 출발지점에서 도착지점까지 탐색해나감</br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/DFS%2C%20BFS/041_B_2178.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/6593">[boj] 6593 - 상범 빌딩</a></font></u></summary>
+
+\- 기본적인 형태의 bfs + 3차원 그래프 미로 탐색</br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_6593.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/7562">[boj] 7562 - 나이트의 이동</a></font></u></summary>
+\- 기본적인 형태의 bfs + 이동을 상하좌우가 아닌 나이트의 이동과 같이 8개의 방향으로 탐색 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/DFS%2C%20BFS/198_B_7562.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/11724">[boj] 11724 - 연결 요소의 개수</a></font></u></summary>
+
+\- 재귀함수 형태의 dfs를 이용 </br>
+\- 해당 그래프를 연결리스트로 저장한 후, 각 연결리스트를 dfs로 돌면서 방문체크, 더 이상 dfs를 통해 방문할 수 없을때 count에 1을 더하여 모두 방문하였을 때의 count = 연결 요소의 개수 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/DFS%2C%20BFS/101_B_11724.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/2468">[boj] 2468 - 안전 영역</a></font></u></summary>
+
+\- 가능한 모든 높이 h에 대하여 dfs를 h 이상일 때만 돌려서 각 h에 대한 영역의 개수를 구하고 그 중 가장 큰 영역의 개수를 출력</br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_2468.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/9019">[boj] 9019 - DSLR</a></font></u></summary>
+\- 현재의 위치(숫자)에서 다음 경로의 위치(D, S, L, R에 해당하는 명령어의 숫자)를 queue에 넣으면서 bfs 탐색 </br>
+\- 이 때 현재까지의 위치(숫자)와 현재까지의 경로(명령어의 나열)을 저장하고, 최종 값이 되는 순간 현재까지의 경로(명령어의 나열)을 출력 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_9019.py">[Python]</a>
+</details>
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/5427">[boj] 5427 - 불</a></font></u></summary>
+\- 불의 위치와 상근이의 위치를 각각 bfs로 탐색해나가면서 상근이가 탈출할 수 있는지 체크 </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_5427.py">[Python]</a>
+</details>
