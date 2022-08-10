@@ -384,7 +384,7 @@ for _ in range(int(input())):
 
 \- dp[n] = 2*n 크기의 직사각형을 채우는 방법의 수 </br>
 \- dp[n+2] = dp[n+1] + dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n 크기의 직사각형에 =를 추가하거나 n+1 크기의 직사각형에 |를 추가하는 2가지 경우만 존재) </br>
-\- <a href="">[Python]</a>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_11726.py">[Python]</a>
 </details>
 
 <details>
@@ -392,7 +392,7 @@ for _ in range(int(input())):
 
 \- 마찬가지로 dp[n] = 2*n 크기의 직사각형을 채우는 방법의 수 </br>
 \- dp[n+2] = dp[n+1] + 2*dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n크기의 직사각형에 = 또는 ㅁ을 추가하는 2가지 경우 또는 n+1 크기의 직사각형에 |를 추가하는 1가지 경우가 존재) </br>
-\- <a href="">[Python]</a>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_11727.py">[Python]</a>
 </details>
 
 <details>
@@ -408,7 +408,7 @@ for _ in range(int(input())):
 
 \- dp[i][j] = j개의 숫자로 이루어진 수 중 마지막 자리의 수가 i인 계단수의 개수 </br>
 \- 점화식은 dp[i][j] = dp[i-1][j-1] + dp[i+1][j-1] (0 < i < 9), dp[1][j-1] (i==0), dp[8][j-1] (i==9)</br>
-\- <a href="">[Python]</a>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/DP/181_B_10844.py">[Python]</a>
 </details>
 
 <details>
@@ -417,7 +417,7 @@ for _ in range(int(input())):
 \- dp[i][j] = (i, j) 번째 수로 오는 경로의 합의 최댓값 </br>
 \- dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + graphs[i][j] (j != 0 and j != i) </br>
 \- dp[i][0] = dp[i-1][0] + graphs[i][0], dp[i][i] = dp[i-1][i-1] + graphs[i][i] (j == 0 or j == i) </br>
-\- <a href="">[Python]</a>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_1932.py">[Python]</a>
 </details>
 
 <details>
