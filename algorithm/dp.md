@@ -379,76 +379,70 @@ for _ in range(int(input())):
 
 ### 참고 문제
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/11726">[boj] 11726 - 2*n 타일링</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[n]은 2*n 크기의 직사각형을 채우는 방법의 수, dp[n+2] = dp[n+1] + dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n 크기의 직사각형에 =를 추가하거나 n+1 크기의 직사각형에 |를 추가하는 2가지 경우만 존재)
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/11726">[boj] 11726 - 2*n 타일링</a></font></u></summary>
+
+\- dp[n] = 2*n 크기의 직사각형을 채우는 방법의 수 </br>
+\- dp[n+2] = dp[n+1] + dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n 크기의 직사각형에 =를 추가하거나 n+1 크기의 직사각형에 |를 추가하는 2가지 경우만 존재) </br>
+\- <a href="">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/11727">[boj] 11727 - 2*n 타일링2</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;마찬가지로 dp[n]은 2*n 크기의 직사각형을 채우는 방법의 수라고 하면, dp[n+2] = dp[n+1] + 2*dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n크기의 직사각형에 = 또는 ㅁ을 추가하는 2가지 경우 또는 n+1 크기의 직사각형에 |를 추가하는 1가지 경우가 존재)
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/11727">[boj] 11727 - 2*n 타일링2</a></font></u></summary>
+
+\- 마찬가지로 dp[n] = 2*n 크기의 직사각형을 채우는 방법의 수 </br>
+\- dp[n+2] = dp[n+1] + 2*dp[n]를 만족 (n+2 크기의 직사각형을 만들려면 n크기의 직사각형에 = 또는 ㅁ을 추가하는 2가지 경우 또는 n+1 크기의 직사각형에 |를 추가하는 1가지 경우가 존재) </br>
+\- <a href="">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1463">[boj] 1463 - 1로 만들기</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[n]을 n을 1로 만드는 최소 횟수라고 하면, dp[n] = min(dp[n/3]+1, dp[n/2]+1, dp[n-1]+1)를 만족 (단, n/3이 정수이거나 n/2가 정수인 경우)
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1463">[boj] 1463 - 1로 만들기</a></font></u></summary>
+
+\- dp[n] = n을 1로 만드는 최소 횟수 </br>
+\- dp[n] = min(dp[n/3]+1, dp[n/2]+1, dp[n-1]+1)를 만족 (단, n/3이 정수이거나 n/2가 정수인 경우) </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/ps/DP/033_B_1463.py">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/10844">[boj] 10844 - 쉬운 계단 수</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[i][j] = j개의 숫자로 이루어진 수 중 마지막 자리의 수가 i인 계단수의 개수, <br>
-        점화식은 dp[i][j] = dp[i-1][j-1] + dp[i+1][j-1] (0 < i < 9), dp[1][j-1] (i==0), dp[8][j-1] (i==9)
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/10844">[boj] 10884 - 쉬운 계단 수</a></font></u></summary>
+
+\- dp[i][j] = j개의 숫자로 이루어진 수 중 마지막 자리의 수가 i인 계단수의 개수 </br>
+\- 점화식은 dp[i][j] = dp[i-1][j-1] + dp[i+1][j-1] (0 < i < 9), dp[1][j-1] (i==0), dp[8][j-1] (i==9)</br>
+\- <a href="">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/1932">[boj] 1932 - 정수 삼각형</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[i][j]는 (i, j) 번째 수로 오는 경로의 합의 최댓값, <br> dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + graphs[i][j] (j != 0 and j != i),<br> dp[i][0] = dp[i-1][0] + graphs[i][0], dp[i][i] = dp[i-1][i-1] + graphs[i][i] (j == 0 or j == i)
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/1932">[boj] 1932 - 정수 삼각형</a></font></u></summary>
+
+\- dp[i][j] = (i, j) 번째 수로 오는 경로의 합의 최댓값 </br>
+\- dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + graphs[i][j] (j != 0 and j != i) </br>
+\- dp[i][0] = dp[i-1][0] + graphs[i][0], dp[i][i] = dp[i-1][i-1] + graphs[i][i] (j == 0 or j == i) </br>
+\- <a href="">[Python]</a>
 </details>
 
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/15486">[boj] 15486 - 퇴사 2</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[i] : i일 전까지(i-1일까지)의 최대 수익라고 하자. i번째 일을 안한다면 dp[i+1] = dp[i], i번째 일을 한다면 dp[i+T[i]] = dp[i] + P[i] <br> 따라서 dp[i+1] = max(dp[i], dp[i+1]), dp[i+T[i]] = max(dp[i+T[i]], dp[i]+P[i])를 만족함
-    </div> 
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/15486">[boj] 15486 - 퇴사 2</a></font></u></summary>
+
+\- dp[i] = i일 전까지(i-1일까지)의 최대 수익 </br>
+\- i번째 일을 안한다면 dp[i+1] = dp[i], i번째 일을 한다면 dp[i+T[i]] = dp[i] + P[i] </br>
+\- 따라서 dp[i+1] = max(dp[i], dp[i+1]), dp[i+T[i]] = max(dp[i+T[i]], dp[i]+P[i]) </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_15486.py">[Python]</a>
 </details>
-<details> 
-    <summary>
-        <a href="https://www.acmicpc.net/problem/14517">[boj] 14517 - 팰린드롬 개수 구하기 (Large)</a>
-    </summary> 
-    <div markdown="1">
-          &nbsp;&nbsp;dp[i][j] : s[i:j]에서의 '부분수열'(연속된 부분 문자열이 아님) 중 팰린드롬의 개수라고 하자. <br>
-0. i > j라면 해당 문자열은 존재하지 않으므로 dp[i][j] = 0 <br>
-s[i:j]에서의 팰린드롬의 개수는 s[i] != s[j] 라면 <br>
-1. i를 포함하지 않는 경우 (s[i+1:j]) 와 <br>
-2. j를 포함하지 않는 경우 (s[i:j-1]) 의 개수에 <br>
-3-1. i와 j를 모두 포함하지 않는 경우 (s[i+1:j-1]) 의 개수를 빼주어야 한다. (1과 2에서 중복되므로) <br>
-단 s[i] = s[j] 라면 <br>
-3-2. s[i+1:j-1]에서 s[i]와 s[j]를 양쪽에 추가하면 팰린드롬이 되므로 빼주지 않아도 되고 추가로 s[i], s[j] 자체도 팰린드롬이므로 1을 더해준다. <br>
-따라서 다음과 같은 점화식을 만족한다. <br>
-dp[i][j] = 0    if i > j <br>
-dp[i][j] = dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1]    if s[i] != s[j] <br>
-dp[i][j] = dp[i+1][j] + dp[i][j-1] + 1    otherwise
-    </div> 
+
+<details>
+<summary><u><font size="+1"><a href="https://www.acmicpc.net/problem/14517">[boj] 14517 - 팰린드롬 개수 구하기 (Large) </a></font></u></summary>
+
+\- dp[i][j] = s[i:j]에서의 '부분수열'(연속된 부분 문자열이 아님) 중 팰린드롬의 개수 </br>
+\- 0. i > j라면 해당 문자열은 존재하지 않으므로 dp[i][j] = 0 </br>
+\- s[i:j]에서의 팰린드롬의 개수는 s[i] != s[j] 라면 </br>
+\- 1. i를 포함하지 않는 경우 (s[i+1:j]) 와 </br>
+\- 2. j를 포함하지 않는 경우 (s[i:j-1]) 의 개수에 </br>
+\- 3-1. i와 j를 모두 포함하지 않는 경우 (s[i+1:j-1]) 의 개수를 빼주어야 한다. (1과 2에서 중복되므로) </br>
+\- 단 s[i] = s[j] 라면 </br>
+\- 3-2. s[i+1:j-1]에서 s[i]와 s[j]를 양쪽에 추가하면 팰린드롬이 되므로 빼주지 않아도 되고 추가로 s[i], s[j] 자체도 팰린드롬이므로 1을 더해준다. </br>
+\- 따라서 다음과 같은 점화식을 만족  </br>
+\- dp[i][j] = 0    if i > j </br>
+\- dp[i][j] = dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1]    if s[i] != s[j] </br>
+\- dp[i][j] = dp[i+1][j] + dp[i][j-1] + 1    otherwise </br>
+\- <a href="https://github.com/cgvvxx/PS/blob/master/boj/boj_14517.py">[Python]</a>
 </details>
